@@ -8,7 +8,7 @@ const {
 } = require('./config')();
 
 module.exports.send = async (station, difference) => {
-  const differenceInCent = (difference / 100).toFixed(1);
+  const differenceInCent = (difference * 100).toFixed(1);
   const parameter = {
     token: pushoverToken,
     user: pushoverUser,
