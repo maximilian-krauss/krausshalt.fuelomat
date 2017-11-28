@@ -14,7 +14,7 @@
     "axios": "^0.17.0",
     "chalk": "^2.3.0",
     "dotenv": "^4.0.0",
-    "micro": "^9.0.1"
+    "micro": "^9.0.2"
   },
   "devDependencies": {
     "eslint": "^4.10.0",
