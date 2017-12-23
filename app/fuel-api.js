@@ -8,7 +8,7 @@ const endpoint = 'https://creativecommons.tankerkoenig.de/json/list.php';
 const options = {
   latitude: config.latitude,
   longitude: config.longitude,
-  radius: 1,
+  radius: 2,
   sort: 'price',
   type: config['fuelapi.type'],
   token: config['fuelapi.token']
@@ -37,7 +37,9 @@ const pickSeverityFrom = station => {
 };
 
 module.exports = async () => {
-  const url = `${endpoint}?lat=${options.latitude}&lng=${options.longitude}&rad=${options.radius}&sort=${options.sort}&type=${options.type}&apikey=${options.token}`;
+  const url = `${endpoint}?lat=${options.latitude}&lng=${options.longitude}&rad=${options.radius}&sort=${options.sort}&type=${options.type}&apikey=${
+    options.token
+  }`;
   const { data: responseBody } = await get(url);
 
   if (!responseBody.stations) throw new Error('No stations found');
